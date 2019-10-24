@@ -1,11 +1,19 @@
 Entidades:
-Veiculos, Motorista, Passageiro, Bairro, Cidade, Roteiro, Viagem, Geometria( Ponto, Reta, Viagem)
+Veiculos, Motorista, Passageiro, Bairro, Cidade, Roteiro, Viagem
 
 Casos de Uso:
-solicitaViagem, avaliaMotorista, solicitaListaViajens, avaliaPassageiro
 
-Interface:
-IPassageiro, IMotorista, IVeiculo, 
+-Serviços:
+	-ServiçosPassageiro:
+		solicitaViagem, avaliaMotorista
 
-Tecnologia:
+	-ServiçosMotorista	
+		 solicitaListaViajens, avaliaPassageiro
 
+-Politicas:
+	calculaCustoViagem, 
+
+-Repositorios:
+	<RepositorioVeiculos>, <RepositorioPassageiros>, 
+
+		
