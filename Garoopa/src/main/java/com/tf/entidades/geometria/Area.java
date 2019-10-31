@@ -34,7 +34,9 @@ return pInfDir;
 public SituacaoReta classifica(Reta reta) {
 
 // TO DO: implementar Cohen e Shuterland
+    SituacaoReta resposta;
 
+    return resposta;
 
 }
 
