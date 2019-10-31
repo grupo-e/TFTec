@@ -1,4 +1,6 @@
-public class Viagem{
+import java.time.LocalTime;
+
+public class Viagem {
     private int identificador;
     private LocalTime data_hora;
     private Roteiro roteiro;

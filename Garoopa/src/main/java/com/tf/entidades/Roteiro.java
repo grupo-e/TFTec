@@ -1,3 +1,5 @@
+package com.tf.entidades;
+
 public class Roteiro{
     private Cidade cidade;
     private Bairro borigem;

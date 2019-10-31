@@ -1,4 +1,6 @@
+package com.tf.entidades;
 public class Veiculos {
+    
     private String placa;
     private String marca;
     private String cor;
@@ -35,10 +37,5 @@ public class Veiculos {
     public Boolean getBagG(){
         return bagG;
     }    
-
-
-
-
-    
 
 }
