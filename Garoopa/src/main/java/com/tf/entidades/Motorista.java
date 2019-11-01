@@ -38,7 +38,7 @@ public class Motorista{
         return qtdAval;
     }
 
-    public Veiculo getVeiculo(){
+    public Veiculos getVeiculo(){
         return veiculo;
     }
 

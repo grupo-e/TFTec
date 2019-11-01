@@ -31,28 +31,109 @@ return pInfDir;
 
 }
 
+private static final int INSIDE = 0;
+private static final int LEFT   = 1;
+private static final int RIGHT  = 2;
+private static final int BOTTOM = 4;
+private static final int TOP    = 8;
+
+private final int regionCode(double x, double y) {
+    int code = x <  pSupEsq.getX()
+        ? LEFT
+        : x > pInfDir.getX()
+            ? RIGHT
+            : INSIDE;
+         if (y < pInfDir.getY()) code |= BOTTOM;
+    else if (y > pSupEsq.getY()) code |= TOP;
+    return code;
+
+}
+
 public SituacaoReta classifica(Reta reta) {
 // TO DO: implementar Cohen e Shuterland
-    SituacaoReta resposta;
-    double p1x = reta.getP1().getX();
-    double p1y = reta.getP1().getY();
-    double p2x  = reta.getP2().getX();
-    double p2y  = reta.getP2().getY();
+    
+    int x1,y1,x2,y2;
+    x1 = reta.getP1().getX();
+    y1 = reta.getP1().getY();
+    x2 = reta.getP2().getX();
+    y2 = reta.getP2().getY();
+    int c1 = regionCode(reta.getP1().getX(), reta.getP1().getY());
+    int c2 = regionCode(reta.getP2().getX(), reta.getP2().getY());
 
-    double qx = 0d;
-    double qy = 0d;
+    while (c1 != INSIDE || c2 != INSIDE) {
 
-    boolean vertical = p1x == p2x;
+        if (c1 == 0 && c2 == 0){ 
 
-    double slope = vertical 
-            ? 0d
-            : (p2y-p1y)/(p2x-p1x);
+            return SituacaoReta.TODA_DENTRO;
 
-    int c1 = regionCode(p1x, p1y);
-    int c2 = regionCode(p2x, p2y);
+        } else if (c1 != 0 && c2 != 0) {
+
+            return SituacaoReta.TODA_FORA;
+
+        } else {
+
+            int c0;
+
+            if (c1 != 0) {
+
+                c0 = c1;
+
+            }else {
+
+                c0 = c2;
+
+            }
+
+            int x = 0;
+            int y = 0;
+
+            if ((c0 & TOP) == 1) {
+
+                x = x1 + (x2-x1) * (pSupEsq.getY()-y1) / (y2-y1); 
+                y = pSupEsq.getY();
+
+            } else if ((c0 & BOTTOM) == 1) {
+
+                x = x1 + (x2 - x1) * (pInfDir.getY() - y1) / (y2 - y1); 
+                y = pInfDir.getY(); 
+
+            }else if ((c0 & RIGHT) == 1) {
+
+                y = y1 + (y2 - y1) * (pInfDir.getX() - x1) / (x2 - x1);
+                x = pInfDir.getX();
+
+            }else if ((c0 & LEFT) == 1) {
+
+                y = y1 + (y2 - y1) * (pSupEsq.getX() - x1) / (x2 - x1);
+                x = pSupEsq.getX();
+
+            }
+
+            if (c0 == c1) {
+
+                x1 = x;
+                y1 = y;
+                c1 = regionCode(x1, y1);
+
+            }else {
+
+                x2 = x;
+                y2 = y;
+                c2 = regionCode(x2, y2);
+
+            }
+
+            return SituacaoReta.INTERSECTA;
+
+        }
+        
+     
+    }
+}
+            
 
 
-    return resposta;
+    
 
 }
 

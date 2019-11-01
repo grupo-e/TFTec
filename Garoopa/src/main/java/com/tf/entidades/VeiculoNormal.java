@@ -1,0 +1,25 @@
+package com.tf.entidades;
+
+public class VeiculoNormal implements veiculo {
+    private String placa;
+    private String marca;
+    private String cor;
+    private Boolean attCorrInf;
+
+
+    @Override
+    public String getPlaca(){return placa;}
+
+    @Override
+    public String getMarca(){return marca;}
+
+    @Override
+    public String getCor(){return cor;}
+
+    @Override
+    public Boolean atendeCorridaInferior(){return attCorrInf;}
+
+    @Override
+    public Boolean bagageiroGrande(){return false;}
+}
+
