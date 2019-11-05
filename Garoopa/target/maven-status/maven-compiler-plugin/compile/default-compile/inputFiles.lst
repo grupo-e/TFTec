@@ -1,5 +1,7 @@
-C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\entidades\veiculo.java
+C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\entidades\Veiculo.java
+C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\politicas\CalculaCustoSimples.java
 C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\entidades\Passageiro.java
+C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\politicas\CalculaCustoViagem.java
 C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\entidades\geometria\Reta.java
 C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\entidades\Roteiro.java
 C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\entidades\VeiculoLuxo.java
@@ -13,3 +15,5 @@ C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\
 C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\entidades\geometria\SituacaoReta.java
 C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\entidades\Viagem.java
 C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\entidades\Motorista.java
+C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\politicas\CalculaCustoLuxo.java
+C:\Users\jayja\Desktop\Faculdade\PUCRS\20192\Tecnicas de Programacao\TF\Garoopa\src\main\java\com\tf\politicas\CalculaCustoNormal.java

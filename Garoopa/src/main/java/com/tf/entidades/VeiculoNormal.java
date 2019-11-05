@@ -1,6 +1,6 @@
 package com.tf.entidades;
 
-public class VeiculoNormal implements veiculo {
+public class VeiculoNormal implements Veiculo {
     private String placa;
     private String marca;
     private String cor;

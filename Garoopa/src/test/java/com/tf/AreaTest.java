@@ -42,7 +42,7 @@ public class AreaTest{
                 })
     public void codRetaTest(int xi,int yi,int xf,int yf,SituacaoReta rEsp) {
         Reta reta = new Reta(new Ponto(xi,yi),new Ponto(xf,yf));
-        SituacaoReta observed = area.classifica(reta);
+        SituacaoReta observed = area.classificaAlt(reta);
         assertEquals(rEsp,observed);
     }
 }

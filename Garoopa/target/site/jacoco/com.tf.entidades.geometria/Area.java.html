@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Area.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Garoopa</a> &gt; <a href="index.source.html" class="el_package">com.tf.entidades.geometria</a> &gt; <span class="el_source">Area.java</span></div><h1>Area.java</h1><pre class="source lang-java linenums">package com.tf.entidades.geometria;
+public class Area {
+
+private Ponto pSupEsq, pInfDir;
+
+<span class="fc" id="L6">public Area(Ponto pSupEsq, Ponto pInfDir) {</span>
+
+<span class="pc bpc" id="L8" title="2 of 4 branches missed.">if ((pSupEsq.getX() &gt;= pInfDir.getX()) || (pSupEsq.getY() &lt;= pInfDir.getY())) {</span>
+
+<span class="nc" id="L10">    throw new IllegalArgumentException(&quot;O retangulo deve ser definido pela diagonal principal&quot;);</span>
+
+} else {
+
+<span class="fc" id="L14">this.pSupEsq = pSupEsq;</span>
+
+<span class="fc" id="L16">this.pInfDir = pInfDir;</span>
+
+}
+<span class="fc" id="L19"></span>
+}
+
+public Ponto getPSupEsq() {
+
+<span class="nc" id="L24">return pSupEsq;</span>
+
+}
+
+public Ponto getPInfDir() {
+
+<span class="nc" id="L30">return pInfDir;</span>
+
+}
+
+private static final int INSIDE = 0;
+private static final int LEFT   = 1;
+private static final int RIGHT  = 2;
+private static final int BOTTOM = 4;
+private static final int TOP    = 8;
+
+private final int regionCode(double x, double y) {
+<span class="nc bnc" id="L41" title="All 2 branches missed.">    int code = x &lt;  pSupEsq.getX()</span>
+<span class="nc" id="L42">        ? LEFT</span>
+<span class="nc bnc" id="L43" title="All 2 branches missed.">        : x &gt; pInfDir.getX()</span>
+<span class="nc" id="L44">            ? RIGHT</span>
+<span class="nc" id="L45">            : INSIDE;</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">         if (y &lt; pInfDir.getY()) code |= BOTTOM;</span>
+<span class="nc bnc" id="L47" title="All 2 branches missed.">    else if (y &gt; pSupEsq.getY()) code |= TOP;</span>
+<span class="nc" id="L48">    return code;</span>
+
+}
+
+public SituacaoReta classificaAlt (Reta reta) {
+
+<span class="fc" id="L54">    int y0 = reta.getP1().getY();</span>
+<span class="fc" id="L55">    int yf = reta.getP2().getY();</span>
+<span class="fc" id="L56">    int x0 = reta.getP1().getX();</span>
+<span class="fc" id="L57">    int xf = reta.getP2().getX();</span>
+<span class="fc" id="L58">    int xMax = pInfDir.getX();</span>
+<span class="fc" id="L59">    int xMin = pSupEsq.getX();</span>
+<span class="fc" id="L60">    int yMax = pSupEsq.getY();</span>
+<span class="fc" id="L61">    int yMin = pInfDir.getY();</span>
+
+    // SE OS DOIS PONTOS ESTAO DENTRO DA RETA JA RETORNA DENTRO
+<span class="pc bpc" id="L64" title="3 of 16 branches missed.">    if(x0&lt;=xMax &amp;&amp; x0 &gt;=xMin &amp;&amp; xf&lt;=xMax &amp;&amp; xf&gt;=xMin &amp;&amp; y0&lt;=yMax &amp;&amp; y0&gt;=yMin &amp;&amp; yf&lt;=yMax &amp;&amp; yf&gt;=yMin) {</span>
+
+<span class="fc" id="L66">        return SituacaoReta.TODA_DENTRO;</span>
+    // MAS SE NAO ESTIVEREM, ELES SOH PODEM SER INTERSECTA OU FORA
+    }   else {
+
+<span class="pc bpc" id="L70" title="2 of 16 branches missed.">            if(x0&lt;=xMax &amp;&amp; x0 &gt;=xMin &amp;&amp;  y0&lt;=yMax &amp;&amp; y0&gt;=yMin || xf&lt;=xMax &amp;&amp; xf&gt;=xMin &amp;&amp; yf&lt;=yMax &amp;&amp; yf&gt;=yMin) {</span>
+
+<span class="nc" id="L72">                return SituacaoReta.INTERSECTA;</span>
+
+            }
+
+<span class="fc" id="L76">            return SituacaoReta.TODA_FORA;  </span>
+
+    }
+
+
+
+
+}
+
+public SituacaoReta classifica(Reta reta) {
+// TO DO: implementar Cohen e Shuterland
+    
+    int x1,y1,x2,y2;
+<span class="nc" id="L89">    x1 = reta.getP1().getX();</span>
+<span class="nc" id="L90">    y1 = reta.getP1().getY();</span>
+<span class="nc" id="L91">    x2 = reta.getP2().getX();</span>
+<span class="nc" id="L92">    y2 = reta.getP2().getY();</span>
+<span class="nc" id="L93">    int c1 = regionCode(reta.getP1().getX(), reta.getP1().getY());</span>
+<span class="nc" id="L94">    int c2 = regionCode(reta.getP2().getX(), reta.getP2().getY());</span>
+
+<span class="nc bnc" id="L96" title="All 4 branches missed.">    while (c1 != INSIDE || c2 != INSIDE) {</span>
+
+<span class="nc bnc" id="L98" title="All 4 branches missed.">        if (c1 == 0 &amp;&amp; c2 == 0){ </span>
+
+<span class="nc" id="L100">            return SituacaoReta.TODA_DENTRO;</span>
+
+<span class="nc bnc" id="L102" title="All 4 branches missed.">        } else if (c1 != 0 &amp;&amp; c2 != 0) {</span>
+
+<span class="nc" id="L104">            return SituacaoReta.TODA_FORA;</span>
+
+        } else {
+
+            int c0;
+
+<span class="nc bnc" id="L110" title="All 2 branches missed.">            if (c1 != 0) {</span>
+
+<span class="nc" id="L112">                c0 = c1;</span>
+
+<span class="nc" id="L114">            }else {</span>
+
+<span class="nc" id="L116">                c0 = c2;</span>
+
+            }
+
+<span class="nc" id="L120">            int x = 0;</span>
+<span class="nc" id="L121">            int y = 0;</span>
+
+<span class="nc bnc" id="L123" title="All 2 branches missed.">            if ((c0 &amp; TOP) == 1) {</span>
+
+<span class="nc" id="L125">                x = x1 + (x2-x1) * (pSupEsq.getY()-y1) / (y2-y1); </span>
+<span class="nc" id="L126">                y = pSupEsq.getY();</span>
+
+<span class="nc bnc" id="L128" title="All 2 branches missed.">            } else if ((c0 &amp; BOTTOM) == 1) {</span>
+
+<span class="nc" id="L130">                x = x1 + (x2 - x1) * (pInfDir.getY() - y1) / (y2 - y1); </span>
+<span class="nc" id="L131">                y = pInfDir.getY(); </span>
+
+<span class="nc bnc" id="L133" title="All 2 branches missed.">            }else if ((c0 &amp; RIGHT) == 1) {</span>
+
+<span class="nc" id="L135">                y = y1 + (y2 - y1) * (pInfDir.getX() - x1) / (x2 - x1);</span>
+<span class="nc" id="L136">                x = pInfDir.getX();</span>
+
+<span class="nc bnc" id="L138" title="All 2 branches missed.">            }else if ((c0 &amp; LEFT) == 1) {</span>
+
+<span class="nc" id="L140">                y = y1 + (y2 - y1) * (pSupEsq.getX() - x1) / (x2 - x1);</span>
+<span class="nc" id="L141">                x = pSupEsq.getX();</span>
+
+            }
+
+<span class="nc bnc" id="L145" title="All 2 branches missed.">            if (c0 == c1) {</span>
+
+<span class="nc" id="L147">                x1 = x;</span>
+<span class="nc" id="L148">                y1 = y;</span>
+<span class="nc" id="L149">                c1 = regionCode(x1, y1);</span>
+
+<span class="nc" id="L151">            }else {</span>
+
+<span class="nc" id="L153">                x2 = x;</span>
+<span class="nc" id="L154">                y2 = y;</span>
+<span class="nc" id="L155">                c2 = regionCode(x2, y2);</span>
+
+            }
+
+<span class="nc" id="L159">            return SituacaoReta.INTERSECTA;</span>
+
+        }
+        
+     
+    }
+<span class="nc" id="L165">    return SituacaoReta.TODA_FORA;</span>
+
+}
+
+    @Override
+
+    public String toString() {
+
+<span class="nc" id="L173">return &quot;Area [pInfDir=&quot; + pInfDir + &quot;, pSupEsq=&quot; + pSupEsq + &quot;]&quot;; </span>
+
+    } 
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

@@ -1,8 +1,20 @@
 -------------------------------------------------------------------------------
 Test set: com.tf.AreaTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.269 s <<< FAILURE! - in com.tf.AreaTest
-codRetaTest{int, int, int, int, SituacaoReta}[1]  Time elapsed: 0.079 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <TODA_DENTRO> but was: <TODA_FORA>
+Tests run: 7, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.24 s <<< FAILURE! - in com.tf.AreaTest
+codRetaTest{int, int, int, int, SituacaoReta}[2]  Time elapsed: 0.024 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <TODA_FORA> but was: <INTERSECTA>
+	at com.tf.AreaTest.codRetaTest(AreaTest.java:46)
+
+codRetaTest{int, int, int, int, SituacaoReta}[3]  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <TODA_FORA> but was: <INTERSECTA>
+	at com.tf.AreaTest.codRetaTest(AreaTest.java:46)
+
+codRetaTest{int, int, int, int, SituacaoReta}[4]  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <TODA_FORA> but was: <INTERSECTA>
+	at com.tf.AreaTest.codRetaTest(AreaTest.java:46)
+
+codRetaTest{int, int, int, int, SituacaoReta}[6]  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <TODA_FORA> but was: <INTERSECTA>
 	at com.tf.AreaTest.codRetaTest(AreaTest.java:46)
 

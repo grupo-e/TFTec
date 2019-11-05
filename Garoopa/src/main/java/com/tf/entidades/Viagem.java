@@ -1,3 +1,4 @@
+package com.tf.entidades;
 import java.time.LocalTime;
 
 public class Viagem {

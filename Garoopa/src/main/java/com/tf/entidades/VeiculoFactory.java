@@ -2,7 +2,7 @@ package com.tf.entidades;
 
 public class VeiculoFactory {
 
-    public static veiculo getVeiculo(String tipoVeiculo){
+    public static Veiculo getVeiculo(String tipoVeiculo){
         if(tipoVeiculo == null){
             return null;
         }

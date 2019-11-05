@@ -1,6 +1,6 @@
 package com.tf.entidades;
 
-public class VeiculoSimples implements veiculo {
+public class VeiculoSimples implements Veiculo {
     private String placa;
     private String marca;
     private String cor;

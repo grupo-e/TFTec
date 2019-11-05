@@ -9,7 +9,7 @@ public class Bairro {
 
     public Bairro (String Nome, int CustoBasico, Area Limites){
         this.nome = Nome;
-        this. CustoBasico = CustoBasico;
+        this.CustoBasico = CustoBasico;
         this.Limites = Limites;
     }
 

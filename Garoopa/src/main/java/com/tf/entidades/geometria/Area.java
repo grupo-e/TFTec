@@ -49,6 +49,39 @@ private final int regionCode(double x, double y) {
 
 }
 
+public SituacaoReta classificaAlt (Reta reta) {
+
+    int y0 = reta.getP1().getY();
+    int yf = reta.getP2().getY();
+    int x0 = reta.getP1().getX();
+    int xf = reta.getP2().getX();
+    int xMax = pInfDir.getX();
+    int xMin = pSupEsq.getX();
+    int yMax = pSupEsq.getY();
+    int yMin = pInfDir.getY();
+
+    // SE OS DOIS PONTOS ESTAO DENTRO DA RETA JA RETORNA DENTRO
+    if(x0<=xMax && x0 >=xMin && xf<=xMax && xf>=xMin && y0<=yMax && y0>=yMin && yf<=yMax && yf>=yMin) {
+
+        return SituacaoReta.TODA_DENTRO;
+    // MAS SE NAO ESTIVEREM, ELES SOH PODEM SER INTERSECTA OU FORA
+    }   else {
+
+            if(x0<=xMax && x0 >=xMin &&  y0<=yMax && y0>=yMin || xf<=xMax && xf>=xMin && yf<=yMax && yf>=yMin) {
+
+                return SituacaoReta.INTERSECTA;
+
+            }
+
+            return SituacaoReta.TODA_FORA;  
+
+    }
+
+
+
+
+}
+
 public SituacaoReta classifica(Reta reta) {
 // TO DO: implementar Cohen e Shuterland
     

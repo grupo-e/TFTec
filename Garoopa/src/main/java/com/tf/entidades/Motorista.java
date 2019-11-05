@@ -5,7 +5,7 @@ public class Motorista{
     private String nome;
     private int somAval;
     private int qtdAval;
-    private Veiculos veiculo;
+    private Veiculo veiculo;
     private Pagamento pagamento;
     public enum Pagamento {
 
@@ -13,7 +13,7 @@ public class Motorista{
 
     }
 
-    public Motorista(String cpf, String nome, int somaAval, int qtdAval,Veiculos veiculo, Pagamento pagamento){
+    public Motorista(String cpf, String nome, int somaAval, int qtdAval,Veiculo veiculo, Pagamento pagamento){
         this.cpf=cpf;
         this.nome=nome;
         this.somAval=somAval;
@@ -38,7 +38,7 @@ public class Motorista{
         return qtdAval;
     }
 
-    public Veiculos getVeiculo(){
+    public Veiculo getVeiculo(){
         return veiculo;
     }
 

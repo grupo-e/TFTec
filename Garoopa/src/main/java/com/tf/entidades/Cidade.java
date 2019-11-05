@@ -6,7 +6,7 @@ public class Cidade {
     private String nome;
     private List<Bairro> bairros = new LinkedList<>();
 
-    public Cidade(String nome, List<Bairros> bairros) {
+    public Cidade(String nome, List<Bairro> bairros) {
 
         this.nome = nome;
         this.bairros = bairros;
