@@ -1,6 +1,6 @@
 package com.tf.entidades;
 
-public interface veiculo {
+public interface Veiculo {
 
     public String getPlaca();
 
