@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.tf.AreaTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.269 s <<< FAILURE! - in com.tf.AreaTest
+codRetaTest{int, int, int, int, SituacaoReta}[1]  Time elapsed: 0.079 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <TODA_DENTRO> but was: <TODA_FORA>
+	at com.tf.AreaTest.codRetaTest(AreaTest.java:46)
+

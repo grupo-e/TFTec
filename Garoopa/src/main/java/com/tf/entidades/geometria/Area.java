@@ -129,16 +129,16 @@ public SituacaoReta classifica(Reta reta) {
         
      
     }
-}
-            
-
-
-    
+    return SituacaoReta.TODA_FORA;
 
 }
 
-@Override
+    @Override
 
-public String toString() {
+    public String toString() {
 
-return "Area [pInfDir=" + pInfDir + ", pSupEsq=" + pSupEsq + "]"; } }
+return "Area [pInfDir=" + pInfDir + ", pSupEsq=" + pSupEsq + "]"; 
+
+    } 
+
+}
