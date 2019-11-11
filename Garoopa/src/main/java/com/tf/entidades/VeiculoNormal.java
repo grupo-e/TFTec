@@ -6,6 +6,14 @@ public class VeiculoNormal implements Veiculo {
     private String cor;
     private Boolean attCorrInf;
 
+    public VeiculoNormal(String placa, String marca, String cor) {
+
+        this.placa = placa;
+        this.marca = marca;
+        this.cor = cor;
+        attCorrInf = true;
+
+    }
 
     @Override
     public String getPlaca(){return placa;}

@@ -15,6 +15,7 @@ public class CalculaCustoNormal implements CalculaCustoViagem {
 
 
     }
+    
 }
 
 

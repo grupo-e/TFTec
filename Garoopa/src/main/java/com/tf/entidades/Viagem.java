@@ -37,7 +37,7 @@ public class Viagem {
         return passageiro;
     }   
 
-    public double getCusto(){
+    public double getCusto(){//ver isso aqui
         return custo;
     }   
     

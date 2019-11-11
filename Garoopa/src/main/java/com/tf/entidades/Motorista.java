@@ -7,6 +7,7 @@ public class Motorista{
     private int qtdAval;
     private Veiculo veiculo;
     private Pagamento pagamento;
+    
     public enum Pagamento {
 
         DINHEIRO, DEBITO, CREDITO  

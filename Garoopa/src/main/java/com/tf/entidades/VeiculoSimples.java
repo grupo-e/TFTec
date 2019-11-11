@@ -4,9 +4,14 @@ public class VeiculoSimples implements Veiculo {
     private String placa;
     private String marca;
     private String cor;
-    private Boolean attInf;
-    private Boolean bagG;
+    
+    public VeiculoSimples(String placa, String marca, String cor) {
 
+        this.placa = placa;
+        this.marca = marca;
+        this.cor = cor;
+
+    }
 
     @Override
     public String getPlaca(){return placa;}

@@ -8,6 +8,16 @@ public class VeiculoLuxo implements Veiculo{
     private Boolean attCorrInf;
     private Boolean bagG;
 
+    public VeiculoLuxo(String placa, String marca, String cor) {
+
+        this.placa = placa;
+        this.marca = marca;
+        this.cor = cor;
+        attCorrInf = true;
+        bagG = true;
+
+    }
+
 
     @Override
     public String getPlaca(){return placa;}
